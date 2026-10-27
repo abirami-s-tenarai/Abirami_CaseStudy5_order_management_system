@@ -25,3 +25,8 @@ phases:
       - go test ./...
       - go vet ./...
       - echo "Build completed successfully."
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'order-management'
