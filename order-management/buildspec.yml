@@ -7,14 +7,15 @@ phases:
 
   pre_build:
     commands:
-      - cd order-management && go mod download
+      - cd order-management
+      - go mod download
 
   build:
     commands:
-      - cd order-management && go build ./...
+      - go build ./...
 
   post_build:
     commands:
-      - cd order-management && go test ./...
-      - cd order-management && go vet ./...
+      - go test ./...
+      - go vet ./...
       - echo "Build completed successfully."
