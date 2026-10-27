@@ -7,18 +7,14 @@ phases:
 
   pre_build:
     commands:
-      - echo "Downloading Go dependencies..."
-      - go mod download
+      - cd order-management && go mod download
 
   build:
     commands:
-      - echo "Building Go application..."
-      - go build ./...
+      - cd order-management && go build ./...
 
   post_build:
     commands:
-      - echo "Running tests..."
-      - go test ./...
-      - echo "Running Go vet..."
-      - go vet ./...
+      - cd order-management && go test ./...
+      - cd order-management && go vet ./...
       - echo "Build completed successfully."
